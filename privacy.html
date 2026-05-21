@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Flipin' Choice</title>
+  <meta name="description" content="Privacy Policy for Flipin' Choice. Learn how we handle your data, cookies, and advertising." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6964537579497141" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0a0a0a;
+      --yellow:  #f5e642;
+      --yellow2: #fff176;
+      --white:   #f0f0f0;
+      --grey:    #555;
+      --grey-lt: #888;
+      --card:    rgba(255,255,255,0.04);
+      --border:  rgba(245,230,66,0.2);
+      --glow:    rgba(245,230,66,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    /* ── Noise texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── Glow orb ── */
+    body::after {
+      content: '';
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,230,66,0.05) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Page wrapper ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 780px;
+      padding: 48px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--grey-lt);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      animation: fadeDown 0.8s ease both;
+    }
+    .back-link:hover { color: var(--yellow); }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      animation: fadeDown 0.8s ease both;
+    }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+      color: var(--white);
+    }
+
+    h1 span {
+      color: var(--yellow);
+      display: block;
+    }
+
+    .meta {
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: var(--grey-lt);
+      letter-spacing: 0.1em;
+    }
+
+    .divider {
+      width: 40px;
+      height: 3px;
+      background: var(--yellow);
+      margin: 20px auto 0;
+    }
+
+    /* ── Main card ── */
+    .card {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 4px;
+      padding: 52px 52px 60px;
+      box-shadow: 0 0 60px var(--glow);
+      animation: fadeUp 0.8s 0.2s ease both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Yellow left accent */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--yellow);
+    }
+
+    /* ── Sections ── */
+    .section { margin-bottom: 44px; }
+    .section:last-child { margin-bottom: 0; }
+
+    .section-num {
+      font-size: 0.62rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      opacity: 0.7;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--grey-lt);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    p a {
+      color: var(--yellow);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,230,66,0.3);
+      transition: border-color 0.2s;
+    }
+    p a:hover { border-color: var(--yellow); }
+
+    p strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    /* ── Section divider ── */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(245,230,66,0.15), transparent);
+      margin-bottom: 44px;
+    }
+
+    /* ── Cookie table ── */
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.82rem;
+    }
+
+    .cookie-table th {
+      text-align: left;
+      font-weight: 500;
+      color: var(--yellow);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(245,230,66,0.2);
+    }
+
+    .cookie-table td {
+      padding: 12px 14px;
+      color: var(--grey-lt);
+      font-weight: 300;
+      line-height: 1.6;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: top;
+    }
+
+    .cookie-table tr:last-child td { border-bottom: none; }
+
+    /* ── Contact box ── */
+    .contact-box {
+      margin-top: 20px;
+      padding: 24px 28px;
+      border: 1px solid rgba(245,230,66,0.2);
+      border-radius: 4px;
+      background: rgba(245,230,66,0.03);
+    }
+    .contact-box p { margin-bottom: 0; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-size: 0.68rem;
+      color: var(--grey);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 560px) {
+      .card { padding: 36px 22px 44px; }
+      .cookie-table { font-size: 0.75rem; }
+      .cookie-table th, .cookie-table td { padding: 10px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Back link -->
+  <a href="/" class="back-link">← Back to Flipin' Choice</a>
+
+  <!-- Header -->
+  <header>
+    <p class="eyebrow">✦ flipinchoice.com ✦</p>
+    <h1>Privacy<span>Policy</span></h1>
+    <p class="meta">Last updated: <span id="updateDate"></span></p>
+    <div class="divider"></div>
+  </header>
+
+  <!-- Main content -->
+  <div class="card">
+
+    <!-- Intro -->
+    <div class="section">
+      <p>Welcome to <strong>Flipin' Choice</strong> ("we", "our", or "us"), accessible at <a href="https://www.flipinchoice.com">www.flipinchoice.com</a>. We are committed to protecting your privacy and being transparent about how our website operates. This Privacy Policy explains what information we collect, how we use it, and your rights in relation to it.</p>
+      <p>By using Flipin' Choice you agree to the practices described in this policy. If you do not agree, please discontinue use of the site.</p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 1 -->
+    <div class="section">
+      <p class="section-num">Section 01</p>
+      <h2>Who We Are</h2>
+      <p>Flipin' Choice is a decision-making web application that uses a coin flip and psychological reaction technique to help visitors discover what they truly want. The site is operated as an independent website based in the United Kingdom.</p>
+      <p>For any privacy-related queries please contact us at: <a href="mailto:hello@flipinchoice.com">hello@flipinchoice.com</a></p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <p class="section-num">Section 02</p>
+      <h2>What Information We Collect</h2>
+      <p>Flipin' Choice is designed with your privacy in mind. We do <strong>not</strong> require you to create an account, register, or provide any personal information to use the service.</p>
+      <p><strong>Options you enter:</strong> The two options you type into the coin flip tool are processed entirely within your browser in real time. These options are not sent to any server, stored, logged, or retained by us in any way.</p>
+      <p><strong>Automatically collected data:</strong> Like most websites, certain technical information may be automatically collected when you visit, including your IP address, browser type, device type, pages visited, and time of visit. This data is collected via third-party services described below and is used in aggregate, anonymised form only.</p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <p class="section-num">Section 03</p>
+      <h2>Cookies &amp; Tracking</h2>
+      <p>We use cookies and similar tracking technologies on our site. Cookies are small text files stored on your device that help websites function and provide analytical insights.</p>
+
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Cookie Type</th>
+            <th>Purpose</th>
+            <th>Provider</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Advertising</strong></td>
+            <td>Used to serve relevant advertisements and measure ad performance</td>
+            <td>Google AdSense</td>
+          </tr>
+          <tr>
+            <td><strong>Analytics</strong></td>
+            <td>Used to understand how visitors interact with the site in aggregate</td>
+            <td>Google Analytics (if enabled)</td>
+          </tr>
+          <tr>
+            <td><strong>Functional</strong></td>
+            <td>Essential cookies required for the site to operate correctly</td>
+            <td>Flipin' Choice</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>You can control and manage cookies through your browser settings. Please note that disabling certain cookies may affect the functionality of the site. For more information on managing cookies visit <a href="https://www.aboutcookies.org" target="_blank" rel="noopener">aboutcookies.org</a>.</p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <p class="section-num">Section 04</p>
+      <h2>Google AdSense &amp; Advertising</h2>
+      <p>Flipin' Choice displays advertisements served by <strong>Google AdSense</strong>, a service provided by Google LLC. Google AdSense uses cookies to serve ads based on your prior visits to this and other websites.</p>
+      <p>Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our site and other sites on the internet. You may opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>.</p>
+      <p>For more information on how Google uses data when you use our site, please visit: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses data from partner sites</a>.</p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 5 -->
+    <div class="section">
+      <p class="section-num">Section 05</p>
+      <h2>Third-Party Services</h2>
+      <p><strong>Google Fonts</strong> — used to load the typography on this site. Google may collect limited data when fonts are loaded. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+      <p><strong>GitHub Pages</strong> — this website is hosted on GitHub Pages. GitHub may collect technical information in accordance with their <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">Privacy Statement</a>.</p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 6 -->
+    <div class="section">
+      <p class="section-num">Section 06</p>
+      <h2>Your Rights Under GDPR</h2>
+      <p>As we are based in the United Kingdom and may serve visitors from the European Economic Area, we are committed to upholding your rights under the UK GDPR and EU GDPR. These rights include:</p>
+      <p><strong>The right to access</strong> — you have the right to request information about any personal data we hold about you.</p>
+      <p><strong>The right to erasure</strong> — you have the right to request that we delete any personal data we hold about you.</p>
+      <p><strong>The right to restrict processing</strong> — you have the right to request that we limit how we use your data.</p>
+      <p><strong>The right to object</strong> — you have the right to object to our processing of your personal data.</p>
+      <p><strong>The right to data portability</strong> — you have the right to request a copy of your data in a machine-readable format.</p>
+      <p>As Flipin' Choice does not collect or store personal data beyond what is described in this policy, most of these rights are satisfied by design. To exercise any of these rights please contact us using the details below.</p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 7 -->
+    <div class="section">
+      <p class="section-num">Section 07</p>
+      <h2>Children's Privacy</h2>
+      <p>Flipin' Choice is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through our site please contact us and we will take steps to remove it promptly.</p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 8 -->
+    <div class="section">
+      <p class="section-num">Section 08</p>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal and regulatory reasons. When we do, we will update the "Last updated" date at the top of this page. We encourage you to review this policy periodically.</p>
+      <p>Continued use of Flipin' Choice after any changes constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 9 -->
+    <div class="section">
+      <p class="section-num">Section 09</p>
+      <h2>Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please don't hesitate to get in touch.</p>
+      <div class="contact-box">
+        <p>📧 <strong>Email:</strong> <a href="mailto:hello@flipinchoice.com">hello@flipinchoice.com</a><br /><br />
+        🌐 <strong>Website:</strong> <a href="https://www.flipinchoice.com">www.flipinchoice.com</a><br /><br />
+        📍 <strong>Location:</strong> United Kingdom</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; <span id="yr"></span> Flipin' Choice &nbsp;·&nbsp; flipinchoice.com &nbsp;·&nbsp; Trust your gut
+  </footer>
+
+</div>
+
+<script>
+  const now  = new Date();
+  const opts = { year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('updateDate').textContent = now.toLocaleDateString('en-GB', opts);
+  document.getElementById('yr').textContent = now.getFullYear();
+</script>
+</body>
+</html>
